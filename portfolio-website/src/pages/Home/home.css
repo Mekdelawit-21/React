@@ -1,0 +1,159 @@
+.home-container {
+  grid-template-columns: 4.75fr 7.25fr;
+  align-items: center;
+  gap: 2rem clamp(2rem, -22.6531rem + 32.6531vw, 10rem);
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+.home-img {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  max-width: 400px;
+  object-fit: cover;
+  border-radius: 2rem;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--first-color);
+}
+
+.home-title {
+  font-size: var(--h1-font-size);
+  padding-left: 4.25rem;
+  position: relative;
+  line-height: 1.2;
+}
+
+.home-titles {
+  font-size: var(--normal-font-size);
+  padding-left: 0.5rem;
+  position: relative;
+}
+
+.home-title span {
+  color: var(--first-color);
+}
+
+.home-titles span {
+  color: var(--first-color);
+}
+
+.home-title::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  border-radius: 0.5rem;
+  background-color: var(--first-color);
+}
+
+.home-description {
+  line-height: 1.75;
+  max-width: 600px;
+  margin-block: 1.5rem 2.5rem;
+}
+
+.color-block {
+  position: fixed;
+  width: 30%;
+  height: 150%;
+  background-color: var(--first-color);
+  transform: rotate(-16deg);
+  top: -12%;
+  left: -12%;
+  z-index: -1;
+}
+
+/* Role Animation */
+.role-container {
+  position: relative;
+  display: inline-block;
+  height: 1.5em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.role {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: var(--weight-700);
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(20px);
+  width: 100%;
+}
+
+.role.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.role.web-dev {
+  color: var(--first-color);
+}
+
+.role.graphic-des {
+  color: #FF6B6B;
+}
+
+/* Responsive adjustments for home section */
+@media screen and (max-width: 1200px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+  
+  .home-img {
+    height: auto;
+    width: 280px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  
+  .home-title {
+    padding-left: 0;
+  }
+  
+  .home-title::before {
+    display: none;
+  }
+  
+  .home-description {
+    margin-inline: auto;
+  }
+  
+  .color-block {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-img {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .home-title {
+    font-size: var(--h2-font-size);
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .home-img {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .home-title {
+    font-size: var(--h3-font-size);
+  }
+  
+  .home-description {
+    font-size: var(--small-font-size);
+  }
+}
