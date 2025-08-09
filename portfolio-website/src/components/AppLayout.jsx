@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom"; // ✅ Correct import
+import { Outlet } from "react-router-dom";
 import Navbar from "./navbar/Navbar.jsx";
 import Themes from "./themes/Themes.jsx";
 
@@ -6,7 +6,7 @@ const AppLayout = () => {
   return (
     <>
       <Navbar />
-      <Outlet /> {/* Will now render Home, About, Portfolio, or Contact */}
+      <Outlet />
       <Themes />
     </>
   );

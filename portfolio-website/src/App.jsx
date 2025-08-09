@@ -4,7 +4,7 @@ import About from "./pages/about/About.jsx";
 import Portfolio from "./pages/portfolio/portfolio.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import AppLayout from "./components/AppLayout.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom"; // ✅ Correct import
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -12,9 +12,8 @@ const App = () => {
       path: "/",
       element: <AppLayout />,
       children: [
-        // ✅ lowercase 'children' (not 'Children')
         {
-          index: true, // ✅ Instead of path: "/"
+          index: true,
           element: <Home />,
         },
         {
