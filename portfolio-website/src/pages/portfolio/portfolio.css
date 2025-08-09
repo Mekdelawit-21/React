@@ -12,7 +12,6 @@
 .portfolio-img-wrapper{
     border-radius: 1.25rem;
     overflow: hidden;
-
     display: block;
 }
 
@@ -36,7 +35,7 @@
 
 .portfolio-skills{
     background-color: var(--body-color);
-    padding-inline: o.75rem;
+    padding-inline: 0.75rem;
     width: max-content;
     height: 34px;
     border-radius: 1rem;
@@ -51,7 +50,7 @@
 }
 
 .portfolio-link{
-    columns: var(--title-color);
+    color: var(--title-color);
     display: inline-flex;
     align-items: center;
     column-gap: 0.5rem;
@@ -59,9 +58,46 @@
 }
 
 .portfolio-link:hover{
-    color: var(text-color);
+    color: var(--text-color);
 }
 
 .link-icon{
     font-size: 1.25rem;
+}
+
+/* Responsive design for portfolio */
+@media screen and (max-width: 1024px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .portfolio-card {
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .portfolio-container {
+        gap: 1rem;
+    }
+    
+    .portfolio-card {
+        padding: 0.75rem;
+    }
+    
+    .portfolio-title {
+        font-size: var(--normal-font-size);
+    }
+    
+    .portfolio-description {
+        font-size: var(--smaller-font-size);
+    }
 }

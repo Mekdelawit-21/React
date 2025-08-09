@@ -6,18 +6,16 @@ import { RiArrowRightLine } from "react-icons/ri";
 import "./home.css";
 
 const Home = () => {
-  const [currentRole, setCurrentRole] = useState("Web Developer");
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const roles = ["Web Developer", "Graphics Designer"];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prevRole) =>
-        prevRole === roles[0] ? roles[1] : roles[0]
-      );
+      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
     }, 3000); // Changes every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
 
   return (
     <section className="home-container grid">
@@ -25,25 +23,23 @@ const Home = () => {
 
       <div className="home-content">
         <h1 className="home-title">
-          <span>I'm Mekdelawit Hailu</span> <br />
+          <span>I'm Mekdelawit Hailu</span> <br /> <br />
           <div className="role-container">
-            <p
-              className={`role ${
-                currentRole === "Web Developer" ? "active" : ""
-              }`}
-            >
-              Web Developer
-            </p>
-            <p
-              className={`role ${
-                currentRole === "Graphics Designer" ? "active" : ""
-              }`}
-            >
-              Graphics Designer
-            </p>
+            {roles.map((role, index) => (
+              <p
+                key={role}
+                className={`role ${
+                  index === currentRoleIndex ? "active" : ""
+                } ${
+                  role === "Web Developer" ? "web-developer" : "graphics-designer"
+                }`}
+              >
+                {role}
+              </p>
+            ))}
           </div>
         </h1>
-        <br />
+       
         <h4 className="home-description">
           Hello! I'm <strong>Mekdelawit Hailu</strong>, a passionate{" "}
           <strong className="home-titles">
