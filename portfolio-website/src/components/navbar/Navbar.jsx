@@ -1,6 +1,6 @@
 import { links } from "../../Data";
-import {NavLink} from "react-router"
-import {RiCloseLine} from 'react-icons/ri';
+import { NavLink } from "react-router-dom";
+import { RiCloseLine } from 'react-icons/ri';
 import { RiMenuLine } from "react-icons/ri";
 import './navbar.css'
 import { useState } from "react";
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="nav">
-      <div className={`${showMenu ? 'nav-menu     show-menu' : 'nav-menu'}`}>
+      <div className={`${showMenu ? 'nav-menu show-menu' : 'nav-menu'}`}>
         <ul className="nav-list grid">
           {links.map(({ name, icon, path }, index) => {
             return (
